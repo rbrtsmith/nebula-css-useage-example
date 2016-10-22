@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack"
+    "start": "webpack",
+    "serve": "http-server"
   },
   "author": "Robert Smith",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "webpack-merge": "^0.15.0"
   },
   "dependencies": {
+    "http-server": "^0.9.0",
     "nebula-css": "^2.1.0"
   }
 }
