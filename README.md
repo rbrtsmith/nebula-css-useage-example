@@ -1,15 +1,18 @@
 #An example project demonstrating consumption of Nebula CSS
 
 1. Pull down dependencies:
+
   ```
   npm i
   ```
 2. Run Webpack to bundle your assets with the appropriate command:
   * Development mode:
+
     ```
     npm start
     ```
   * Production mode:
+
     ```
     npm run build
     ```
