@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import webpack from 'webpack';
 import path from 'path';
 import LiveReloadPlugin from 'webpack-livereload-plugin';
@@ -11,14 +12,14 @@ const common = {
     main: path.join(__dirname, '/src/js/main.js')
   },
   output: {
-    path: path.join(__dirname,'dist'),
+    path: path.join(__dirname, 'dist'),
     filename: '[name]-bundle.js'
   },
   module: {
     loaders: [
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(['css-loader?sourceMap!', 'sass'])
+        loader: ExtractTextPlugin.extract(['css-loader?sourceMap', 'sass'])
       },
       {
         test: /\.js$/,
@@ -32,14 +33,14 @@ const common = {
   },
   sassLoader: {
     includePaths: [
-      path.resolve(__dirname, './node_modules/nebula-css'),
-    ],
+      path.resolve(__dirname, './node_modules/nebula-css')
+    ]
   },
   resolve: {
     extensions: ['', '.js', '.json', 'scss']
   },
   plugins: [
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('style.css')
   ]
 };
 
@@ -54,11 +55,11 @@ const development = {
 const production = {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-    new CleanWebpackPlugin([path.join(__dirname, 'dist')]),
+    new CleanWebpackPlugin([path.join(__dirname, 'dist')])
   ]
 };
 
-const config = environment => {
+const config = (environment) => {
   switch (environment) {
     case 'build':
       return merge(common, production);

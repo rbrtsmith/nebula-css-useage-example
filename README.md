@@ -22,3 +22,8 @@
   npm run serve
   ```
 4. Hit the one of the suggested urls, typically [http://localhost:8080](http://localhost:8080)
+
+To run linting:
+```
+npm t
+```
